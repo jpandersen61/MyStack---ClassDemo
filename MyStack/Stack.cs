@@ -2,32 +2,32 @@
 
 namespace MyStack
 {
-    public class Stack
+    public class Stack<T>
     {
         int _size;    //Keeps track of the size of the stack, starting at zero 
-        int[] _stack; //Stack implemented as an array
+        T [] _stack; //Stack implemented as an array
         int _currentStackPos;
 
         public Stack(int size)
         {
             _size = size;
-            _stack = new int[size];
+            _stack = new T[size];
 
             _currentStackPos=0;
         }
 
-        public int Pop()
+        public T Pop()
         {
             if (_currentStackPos < 1)
             {
                 throw new MyStackIsEmptyException("Stack is empty");
             }
-            int result = _stack[_currentStackPos-1];
+            T result = _stack[_currentStackPos-1];
             _currentStackPos--;
             return result;
         }
 
-        public void Push(int element)
+        public void Push(T element)
         {
             if (_currentStackPos >= _size)
             {
