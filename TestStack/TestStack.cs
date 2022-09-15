@@ -17,7 +17,7 @@ namespace TestStack
         }
 
         [TestMethod]
-        public void TestPopExcpetion()
+        public void TestPopException()
         {
             Stack s = new Stack(10);
             int testElement = 42;
@@ -34,8 +34,28 @@ namespace TestStack
             {
 
             }
-
-
         }
+
+        [TestMethod]
+        public void TestPushException()
+        {
+            Stack s = new Stack(2);
+            int testElement = 42;
+            s.Push(testElement);
+            s.Push(testElement);
+
+            try
+            {
+                s.Push(testElement);
+                Assert.Fail("Push exception occured");
+            }
+
+            catch (MyStackIsFullException e)
+            {
+
+            }
+        }
+
+        
     }
 }

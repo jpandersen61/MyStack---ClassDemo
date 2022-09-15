@@ -29,6 +29,10 @@ namespace MyStack
 
         public void Push(int element)
         {
+            if (_currentStackPos >= _size)
+            {
+                throw new MyStackIsFullException("Stack full");
+            }
             _stack[_currentStackPos] = element;
             _currentStackPos++;     
         }
