@@ -5,7 +5,7 @@ namespace MyStack
     public class Stack<T>
     {
         int _size;    //Keeps track of the size of the stack, starting at zero 
-        T [] _stack; //Stack implemented as an array
+        T [] _stack;  //Stack implemented as an array
         int _currentStackPos;
 
         public Stack(int size)
