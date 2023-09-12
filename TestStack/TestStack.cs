@@ -57,5 +57,22 @@ namespace TestStack
 
             }
         }
+
+        [TestMethod]
+        public void TestPopException()
+        {
+            Stack s = new Stack(2);
+            
+            try
+            {
+                s.Pop();
+                Assert.Fail("Pop exception did NOT occure");
+            }
+
+            catch (MyStackIsEmptyException e)
+            {
+
+            }
+        }
     }
 }
