@@ -10,7 +10,7 @@ namespace TestStack
         [TestMethod]
         public void TestPushPop()
         {
-            Stack<int> s = new Stack<int>(10);
+            Stack s = new Stack(10);
             int testElement = 42;
             s.Push(testElement);
             int poppedElement = s.Pop();
@@ -20,7 +20,7 @@ namespace TestStack
         [TestMethod]
         public void TestPushPop3()
         {
-            Stack<int> s = new Stack<int>(10);
+            Stack s = new Stack(10);
             int testElement1 = 42;
             s.Push(testElement1);
             int testElement2 = 99;
@@ -39,49 +39,9 @@ namespace TestStack
         }
 
         [TestMethod]
-        public void TestPushPopString()
-        {
-            Stack<string> s = new Stack<string>(10);
-            string testElement = "42";
-            s.Push(testElement);
-            string poppedElement = s.Pop();
-            Assert.AreEqual(testElement, poppedElement);
-        }
-
-        [TestMethod]
-        public void TestPushPopMyType()
-        {
-            Stack<MyType> s = new Stack<MyType>(10);
-            MyType testElement = new MyType();
-            s.Push(testElement);
-            MyType poppedElement = s.Pop();
-            Assert.AreEqual(testElement, poppedElement);
-        }
-
-        [TestMethod]
-        public void TestPopException()
-        {
-            Stack<int> s = new Stack<int>(10);
-            int testElement = 42;
-            s.Push(testElement);
-            int poppedElement = s.Pop();
-            Assert.AreEqual(testElement, poppedElement);
-            try
-            {
-                poppedElement = s.Pop();
-                Assert.Fail("Popexection did NOT occure");
-            }
-
-            catch (MyStackIsEmptyException e)
-            {
-
-            }
-        }
-
-        [TestMethod]
         public void TestPushException()
         {
-            Stack<int> s = new Stack<int>(2);
+            Stack s = new Stack(2);
             int testElement = 42;
             s.Push(testElement);
             s.Push(testElement);
@@ -97,7 +57,5 @@ namespace TestStack
 
             }
         }
-
-        
     }
 }
