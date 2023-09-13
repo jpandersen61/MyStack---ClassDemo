@@ -17,14 +17,28 @@ namespace MyStack
 
         public int Pop()
         {
-            _currentStackPos--;
-            return _stack[_currentStackPos];
+            try
+            {
+                _currentStackPos--;
+                return _stack[_currentStackPos];
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                throw new MyStackIsEmptyException("Stack is empty");
+            }
         }
 
         public void Push(int element)
         {
-            _stack[_currentStackPos] = element;
-            _currentStackPos++;
+            try
+            {
+                _stack[_currentStackPos] = element;
+                _currentStackPos++;
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                throw new MyStackIsFullException("Stack is full");
+            }
         }
     }
 }
