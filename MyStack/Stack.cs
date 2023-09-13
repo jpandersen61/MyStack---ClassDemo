@@ -17,12 +17,14 @@ namespace MyStack
 
         public int Pop()
         {
-            throw new NotImplementedException();
+            _currentStackPos--;
+            return _stack[_currentStackPos];
         }
 
         public void Push(int element)
         {
-            throw new NotImplementedException();
+            _stack[_currentStackPos] = element;
+            _currentStackPos++;
         }
     }
 }
