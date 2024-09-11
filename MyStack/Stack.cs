@@ -19,12 +19,11 @@ namespace MyStack
         {
             try
             {
-                _currentStackPos--;
                 return _stack[_currentStackPos];
             }
             catch (IndexOutOfRangeException e)
             {
-                throw new MyStackIsEmptyException("Stack is empty");
+                throw new Exception("Stack is empty");
             }
         }
 
@@ -33,11 +32,10 @@ namespace MyStack
             try
             {
                 _stack[_currentStackPos] = element;
-                _currentStackPos++;
             }
             catch (IndexOutOfRangeException e)
             {
-                throw new MyStackIsFullException("Stack is full");
+                
             }
         }
     }
